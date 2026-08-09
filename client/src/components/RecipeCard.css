@@ -1,0 +1,785 @@
+/* =========================================================
+FOOD GENIE - RECIPE CARD
+PREMIUM DARK FOOD CARD
+========================================================= */
+
+.recipe-card {
+width: 100%;
+min-width: 0;
+
+display: flex;
+flex-direction: column;
+
+overflow: hidden;
+position: relative;
+
+background:
+linear-gradient(
+145deg,
+#121c2f,
+#0c1423
+);
+
+border: 1px solid rgba(255, 255, 255, 0.08);
+border-radius: 24px;
+
+box-shadow:
+0 15px 40px rgba(0, 0, 0, 0.26);
+
+font-family:
+"Playfair Display",
+Georgia,
+serif;
+
+transition:
+transform 0.35s ease,
+border-color 0.35s ease,
+box-shadow 0.35s ease;
+}
+
+/* =========================================================
+CARD HOVER
+========================================================= */
+
+.recipe-card:hover {
+transform: translateY(-8px);
+
+border-color:
+rgba(255, 183, 3, 0.25);
+
+box-shadow:
+0 25px 55px rgba(0, 0, 0, 0.38),
+0 0 30px rgba(255, 183, 3, 0.05);
+}
+
+/* =========================================================
+IMAGE WRAPPER
+========================================================= */
+
+.recipe-image-wrapper {
+width: 100%;
+height: 255px;
+
+position: relative;
+overflow: hidden;
+
+background: #111827;
+}
+
+/* =========================================================
+FOOD IMAGE
+========================================================= */
+
+.recipe-image {
+width: 100%;
+height: 100%;
+
+display: block;
+
+object-fit: cover;
+
+transition:
+transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+filter 0.5s ease;
+}
+
+/* =========================================================
+IMAGE HOVER
+========================================================= */
+
+.recipe-card:hover .recipe-image {
+transform: scale(1.07);
+
+filter:
+brightness(1.04)
+saturate(1.05);
+}
+
+/* =========================================================
+IMAGE OVERLAY
+========================================================= */
+
+.image-overlay {
+position: absolute;
+
+left: 0;
+right: 0;
+bottom: 0;
+
+height: 120px;
+
+background:
+linear-gradient(
+to bottom,
+transparent,
+rgba(5, 8, 22, 0.78)
+);
+
+pointer-events: none;
+}
+
+/* =========================================================
+IMAGE SHINE
+========================================================= */
+
+.recipe-image-shine {
+position: absolute;
+
+top: 0;
+left: -120%;
+
+width: 70%;
+height: 100%;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(255, 255, 255, 0.08),
+transparent
+);
+
+transform: skewX(-18deg);
+
+pointer-events: none;
+
+transition:
+left 0.8s ease;
+}
+
+.recipe-card:hover .recipe-image-shine {
+left: 140%;
+}
+
+/* =========================================================
+CATEGORY BADGE
+DARK BLUE FAMILY
+========================================================= */
+
+.recipe-category {
+position: absolute;
+
+top: 17px;
+left: 17px;
+
+padding: 8px 14px;
+
+border:
+1px solid rgba(56, 189, 248, 0.45);
+
+border-radius: 999px;
+
+background:
+linear-gradient(
+135deg,
+rgba(7, 35, 65, 0.96),
+rgba(12, 48, 82, 0.94)
+);
+
+backdrop-filter: blur(12px);
+
+-webkit-backdrop-filter: blur(12px);
+
+color: #7dd3fc;
+
+font-family:
+"Playfair Display",
+Georgia,
+serif;
+
+font-size: 11px;
+
+font-weight: 700;
+
+letter-spacing: 0.3px;
+
+box-shadow:
+0 6px 18px rgba(0, 0, 0, 0.30),
+0 0 18px rgba(14, 165, 233, 0.10);
+
+z-index: 5;
+
+transition:
+background 0.25s ease,
+border-color 0.25s ease,
+color 0.25s ease,
+transform 0.25s ease,
+box-shadow 0.25s ease;
+}
+
+/* =========================================================
+CATEGORY HOVER
+========================================================= */
+
+.recipe-card:hover .recipe-category {
+transform: translateY(-1px);
+
+color: #bae6fd;
+
+border-color:
+rgba(56, 189, 248, 0.65);
+
+background:
+linear-gradient(
+135deg,
+rgba(8, 45, 80, 0.98),
+rgba(14, 63, 105, 0.96)
+);
+
+box-shadow:
+0 8px 22px rgba(0, 0, 0, 0.35),
+0 0 22px rgba(14, 165, 233, 0.16);
+}
+
+/* =========================================================
+CONTENT
+========================================================= */
+
+.recipe-content {
+padding: 25px;
+
+display: flex;
+flex-direction: column;
+
+flex: 1;
+}
+
+/* =========================================================
+TITLE ROW
+========================================================= */
+
+.recipe-title-row {
+display: flex;
+
+align-items: flex-start;
+justify-content: space-between;
+
+gap: 12px;
+
+margin-bottom: 11px;
+}
+
+/* =========================================================
+FOOD NAME
+========================================================= */
+
+.recipe-content h2 {
+margin: 0;
+
+color: #ffffff;
+
+font-family:
+"Playfair Display",
+Georgia,
+serif;
+
+font-size: 23px;
+
+font-weight: 800;
+
+line-height: 1.3;
+
+letter-spacing: -0.2px;
+}
+
+/* =========================================================
+STAR
+========================================================= */
+
+.recipe-star {
+flex-shrink: 0;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+width: 30px;
+height: 30px;
+
+border-radius: 9px;
+
+color: #ffcc45;
+
+background:
+rgba(255, 183, 3, 0.08);
+
+border:
+1px solid rgba(255, 183, 3, 0.14);
+
+font-size: 15px;
+
+transition:
+transform 0.25s ease,
+background 0.25s ease;
+}
+
+.recipe-card:hover .recipe-star {
+transform:
+rotate(8deg)
+scale(1.05);
+
+background:
+rgba(255, 183, 3, 0.13);
+}
+
+/* =========================================================
+DESCRIPTION
+========================================================= */
+
+.recipe-description {
+margin: 0 0 23px;
+
+color: #aeb9ca;
+
+font-family:
+"Playfair Display",
+Georgia,
+serif;
+
+font-size: 14px;
+
+font-weight: 500;
+
+line-height: 1.7;
+
+display: -webkit-box;
+
+-webkit-line-clamp: 3;
+line-clamp: 3;
+
+-webkit-box-orient: vertical;
+
+overflow: hidden;
+}
+
+/* =========================================================
+RECIPE INFORMATION
+========================================================= */
+
+.recipe-info {
+width: 100%;
+
+display: grid;
+
+grid-template-columns:
+repeat(3, minmax(0, 1fr));
+
+gap: 9px;
+
+margin-bottom: 24px;
+}
+
+/* =========================================================
+DETAIL BOX
+========================================================= */
+
+.recipe-detail {
+min-width: 0;
+min-height: 66px;
+
+padding: 10px 8px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+gap: 7px;
+
+border-radius: 13px;
+
+border:
+1px solid rgba(255, 255, 255, 0.07);
+
+background:
+rgba(255, 255, 255, 0.035);
+
+transition:
+transform 0.25s ease,
+background 0.25s ease,
+border-color 0.25s ease;
+}
+
+/* =========================================================
+DETAIL HOVER
+========================================================= */
+
+.recipe-detail:hover {
+transform: translateY(-2px);
+
+background:
+rgba(255, 255, 255, 0.055);
+
+border-color:
+rgba(255, 255, 255, 0.12);
+}
+
+/* =========================================================
+DETAIL ICON
+========================================================= */
+
+.detail-icon {
+width: 28px;
+height: 28px;
+
+flex-shrink: 0;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+border-radius: 8px;
+
+font-size: 14px;
+}
+
+/* =========================================================
+DETAIL TEXT
+========================================================= */
+
+.detail-text {
+min-width: 0;
+
+display: flex;
+
+flex-direction: column;
+
+gap: 2px;
+}
+
+/* =========================================================
+DETAIL LABEL
+========================================================= */
+
+.detail-label {
+color: #748196;
+
+font-family:
+"Playfair Display",
+Georgia,
+serif;
+
+font-size: 9px;
+
+font-weight: 700;
+
+text-transform: uppercase;
+
+letter-spacing: 0.5px;
+}
+
+/* =========================================================
+DETAIL VALUE
+========================================================= */
+
+.detail-value {
+color: #e8edf5;
+
+font-family:
+"Playfair Display",
+Georgia,
+serif;
+
+font-size: 11px;
+
+font-weight: 800;
+
+white-space: nowrap;
+
+overflow: hidden;
+
+text-overflow: ellipsis;
+}
+
+/* =========================================================
+TIME
+========================================================= */
+
+.time-detail {
+border-color:
+rgba(0, 180, 216, 0.16);
+
+background:
+rgba(0, 180, 216, 0.055);
+}
+
+.time-detail .detail-icon {
+color: #63d8ef;
+
+background:
+rgba(0, 180, 216, 0.12);
+}
+
+.time-detail .detail-value {
+color: #73dced;
+}
+
+/* =========================================================
+DIFFICULTY
+========================================================= */
+
+.difficulty-detail {
+border-color:
+rgba(0, 200, 150, 0.16);
+
+background:
+rgba(0, 200, 150, 0.055);
+}
+
+.difficulty-detail .detail-icon {
+color: #62d9b5;
+
+background:
+rgba(0, 200, 150, 0.12);
+}
+
+.difficulty-detail .detail-value {
+color: #70d9b9;
+}
+
+/* =========================================================
+CALORIES
+========================================================= */
+
+.calories-detail {
+border-color:
+rgba(255, 183, 3, 0.16);
+
+background:
+rgba(255, 183, 3, 0.055);
+}
+
+.calories-detail .detail-icon {
+color: #ffd166;
+
+background:
+rgba(255, 183, 3, 0.12);
+}
+
+.calories-detail .detail-value {
+color: #ffd166;
+}
+
+/* =========================================================
+VIEW RECIPE BUTTON
+========================================================= */
+
+.view-recipe-btn {
+width: 100%;
+
+min-height: 54px;
+
+margin-top: auto;
+
+padding: 0 20px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+gap: 10px;
+
+border: none;
+
+border-radius: 14px;
+
+background:
+linear-gradient(
+135deg,
+#ffb703,
+#ffc933
+);
+
+color: #111111;
+
+font-family:
+"Playfair Display",
+Georgia,
+serif;
+
+font-size: 14px;
+
+font-weight: 800;
+
+letter-spacing: 0.2px;
+
+cursor: pointer;
+
+box-shadow:
+0 8px 22px rgba(255, 183, 3, 0.14);
+
+transition:
+transform 0.25s ease,
+box-shadow 0.25s ease,
+filter 0.25s ease;
+}
+
+/* =========================================================
+BUTTON HOVER
+========================================================= */
+
+.view-recipe-btn:hover {
+transform: translateY(-3px);
+
+filter: brightness(1.06);
+
+box-shadow:
+0 14px 30px rgba(255, 183, 3, 0.24);
+}
+
+/* =========================================================
+BUTTON ARROW
+========================================================= */
+
+.button-arrow {
+font-size: 20px;
+
+line-height: 1;
+
+transition:
+transform 0.25s ease;
+}
+
+.view-recipe-btn:hover .button-arrow {
+transform: translateX(5px);
+}
+
+/* =========================================================
+BUTTON ACTIVE
+========================================================= */
+
+.view-recipe-btn:active {
+transform: translateY(0);
+
+box-shadow:
+0 6px 14px rgba(255, 183, 3, 0.12);
+}
+
+/* =========================================================
+BUTTON FOCUS
+========================================================= */
+
+.view-recipe-btn:focus-visible {
+outline:
+3px solid rgba(255, 183, 3, 0.35);
+
+outline-offset: 3px;
+}
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+.recipe-image-wrapper {
+height: 240px;
+}
+
+.recipe-content {
+padding: 23px;
+}
+
+.recipe-content h2 {
+font-size: 22px;
+}
+
+}
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+.recipe-card {
+border-radius: 20px;
+}
+
+.recipe-image-wrapper {
+height: 220px;
+}
+
+.recipe-content {
+padding: 21px;
+}
+
+.recipe-content h2 {
+font-size: 21px;
+}
+
+.recipe-description {
+font-size: 13.5px;
+line-height: 1.65;
+}
+
+.recipe-info {
+gap: 7px;
+}
+
+.recipe-detail {
+min-height: 60px;
+padding: 8px 6px;
+gap: 5px;
+}
+
+.detail-icon {
+width: 25px;
+height: 25px;
+font-size: 12px;
+}
+
+.detail-label {
+font-size: 8px;
+}
+
+.detail-value {
+font-size: 10px;
+}
+
+.recipe-category {
+top: 13px;
+left: 13px;
+
+
+padding: 7px 11px;
+
+font-size: 10px;
+
+
+}
+
+.view-recipe-btn {
+min-height: 51px;
+font-size: 13.5px;
+}
+
+}
+
+/* =========================================================
+VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+.recipe-content {
+padding: 18px;
+}
+
+.recipe-info {
+grid-template-columns: 1fr;
+}
+
+.recipe-detail {
+justify-content: flex-start;
+padding-left: 12px;
+}
+
+.recipe-image-wrapper {
+height: 205px;
+}
+
+}
