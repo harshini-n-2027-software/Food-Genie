@@ -16,6 +16,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/foods", foodRoutes);
 
@@ -24,8 +25,10 @@ app.get("/", (req, res) => {
   res.send("🚀 Food Genie Backend is Running!");
 });
 
+// Render provides the PORT through environment variables
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+// Listen on all network interfaces
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server is running on port ${PORT}`);
 });
