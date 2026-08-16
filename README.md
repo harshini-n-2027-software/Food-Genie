@@ -21,3 +21,7 @@ React.js | HTML5 | CSS3 | JavaScript | Node.js | Express.js | MongoDB
 
 📚 Learning Outcome:
 This project strengthened my practical knowledge of MERN Stack development, REST API integration, database connectivity, client-server architecture, and full-stack web development.
+
+
+##Live Demo
+https://food-genie-taupe.vercel.app/
