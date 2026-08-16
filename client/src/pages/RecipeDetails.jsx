@@ -59,7 +59,7 @@ const RecipeDetails = () => {
         setError("");
 
         const response = await axios.get(
-          `http://localhost:5000/api/foods/${id}`
+          `https://food-genie-iwl7.onrender.com/api/foods/${id}`
         );
 
         console.log(

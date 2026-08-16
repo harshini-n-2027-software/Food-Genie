@@ -28,7 +28,7 @@ function Home() {
         setError("");
 
         const response = await axios.get(
-          "http://localhost:5000/api/foods"
+          "https://food-genie-iwl7.onrender.com/api/foods"
         );
 
         console.log("Food API response:", response.data);
