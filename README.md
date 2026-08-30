@@ -237,17 +237,13 @@ Food-Genie/
 │
 ├── README.md
 └── .gitignore
+
+
 ```
-
-> **Note:** Update the `client/src` structure if your final frontend folders differ.
-
----
-
 # 🔐 Authentication Flow
 
 Food Genie uses JWT-based authentication with bcrypt.js for password security.
 
-```text
 User
  │
  ├── Register
