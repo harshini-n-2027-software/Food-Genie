@@ -244,6 +244,7 @@ Food-Genie/
 
 Food Genie uses JWT-based authentication with bcrypt.js for password security.
 
+text
 User
  │
  ├── Register
